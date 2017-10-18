@@ -44,7 +44,7 @@ You will now see that Docker will be pulling down stuff and extracting it and th
 
 If this is the first time you run this command Docker will probably pull down the mongoDB-image from docker hub and it will take some time. Then it will try to start the containers (in the right order) and link them together. It will also start nodemon and run the app.js file. If you using the same code as in this repository the end of output will probably be something like this:
 
-![screenshot after docker-compose up](#)
+![screenshot after docker-compose up](./docker-compose-up.png)
 
 This means that our application has started and are running. This terminal must always be running as long as you want your application/web server running. To shutdown the services just press `ctrl+c` in this terminal window. To restart the services just type docker-compose up again and they will start, probably much faster this time.
 
