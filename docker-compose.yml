@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/opt/app
+      - /opt/app/node_modules
+      # Needed to sync hosts working directory during development.
+  db:
+    image: mongo
+    expose:
+      - "27017"
+    volumes:
+      - mongodata:/data/db
+
+volumes:
+  mongodata:

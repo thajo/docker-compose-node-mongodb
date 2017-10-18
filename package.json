@@ -1,0 +1,15 @@
+{
+  "name": "dev-node",
+  "version": "1.0.0",
+  "description": "This is a test",
+  "main": "app.js",
+  "scripts": {
+    "start": ""
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "author": "thajo",
+  "license": "ISC",
+  "devDependencies": {}
+}
