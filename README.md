@@ -33,11 +33,13 @@ You will have a repository where you will have your application. You have probab
 1. Download the files (Dockerfile and docker-compose.yml) from this repository. You could copy the code in this repository's app.js if you want a start. Make sure to put these files in the same folder as your app.js is.
 2. First we must build the Node.js image. This step will mean that Docker will download a base image from the docker hub, run the instructions defined in the Dockerfile. This will just build the image, no container has yet been started.
 To do this you open our terminal in the folder containing the files and enter the following command in your terminal:
+
 `docker-compose build`
 
 You will now see that Docker will be pulling down stuff and extracting it and then run the instruction, some of them will take some time and you may get some red warnings (we can ignore them right now). This step we only have to do the first time.
 
 3. We have now built the Node.js-image and will now start our containers/services; both the application/web and the mongoDB/db. To do this enter the following command in your terminal:
+
 `docker-compose up`
 
 If this is the first time you run this command Docker will probably pull down the mongoDB-image from docker hub and it will take some time. Then it will try to start the containers (in the right order) and link them together. It will also start nodemon and run the app.js file. If you using the same code as in this repository the end of output will probably be something like this:
@@ -50,6 +52,7 @@ This means that our application has started and are running. This terminal must 
 
 ### Installing node modules in the running container
 One thing that you have to think about when running this docker environment is that you must install your modules in your container which will demand to do a special command. In a separate terminal window (where the current directory is the where your Docker-files is) you write the following command:
+
 `docker-compose exec web npm install <name of the module>`
 
 This executes the command in the container/service named web (that is our application container). As you probably understand the last part of this command is the common "npm install"-command specifying the module you want to install. So if you want to install mongoose you write like:
