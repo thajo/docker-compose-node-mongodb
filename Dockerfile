@@ -32,4 +32,4 @@ COPY . .
 EXPOSE 8000
 
 # Start the application when starting the container
-CMD nodemon -L --watch . app.js
+CMD nodemon --inspect=0.0.0.0:5858 -L --watch . app.js
